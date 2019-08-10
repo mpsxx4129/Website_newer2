@@ -1,0 +1,315 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+
+<script>
+window.onload = function(){
+  var tl = new TimelineLite({delay: 1}),
+    firstBg = document.querySelectorAll('site-logo');
+
+  tl
+    .to(firstBg, 0.2, {scaleX:1})
+    .to(firstBg, 0.2, {scaleX:0})
+
+
+  document.querySelector('.restart').onclick = function() {tl.restart()};
+}
+</script>
+
+
+ <head>
+   <title>Colegio Técnico Profesional de Parrita &mdash; Minimal Blog Template</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700" rel="stylesheet">
+
+   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+   <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+   <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+   <!-- Theme Style -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ </head>
+ <body>
+
+
+
+   <header role="banner">
+     <div class="top-bar">
+       <div class="container">
+         <div class="row">
+           <div class="col-9 social">
+             <a href="https://www.facebook.com/pg/ColegioTecnicoParrita/"><span class="fa fa-facebook"></span></a>
+             <a href="{% url 'contact' %}"> Contáctenos </a>
+           </div>
+            <div class=" search-top22"> <a href="{% url "admin:login" %}">Administrativos </a></div>
+           <div class=" search-top33"><a href="{% url "admin:login" %}">Profesores </a></div>
+         </div>
+       </div>
+     </div>
+
+
+
+       <div class="row pt-5">
+         <div class="col-12 text-center">
+            <div class=" img_logo">  <img class="img_mov" src="{% static 'images/logo.png'%}" alt="Smiley face">   </div>
+           <h1  class="site-logoo"><a href="{% url 'diurno' %}">Colegio Técnico Profesional de Parrita</a></h1>
+            </div>
+      </div>
+
+     </div>
+
+     <nav class="navbar navbar-expand-md  navbar-light bg-light">
+       <div class="container">
+
+
+         <div class="collapse navbar-collapse" id="navbarMenu">
+           <ul class="navbar-nav mx-auto">
+             <li class="nav-item">
+                <div class= "inicio">
+               <a class="nav-link  " href="{% url 'diurno' %}" >Inicio</a></div>
+             </li>
+
+             <li class="nav-item dropdown">
+                <div class= "acerca">
+               <a class="nav-link dropdown-toggle" href="{% url 'acerca' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acerca</a></div>
+               <div class="dropdown-menu" aria-labelledby="dropdown04">
+                 <a class="dropdown-item" href="{% url 'acerca' %}">Nosotros</a>
+                 <a class="dropdown-item" href="{% url 'valores' %}">Valores</a>
+                 <a class="dropdown-item" href="{% url 'hist' %}">Historia</a>
+               </div>
+
+             </li>
+
+             <div class= "Matrícula">
+             <li class="nav-item">
+               <a class="nav-link" href="{% url 'index' %}">Anuncios</a>
+             </li>
+             </div>
+             <div class= "Calendario">
+             <li class="nav-item">
+               <a class="nav-link" href="{% url 'calendario' %}">Calendario</a>
+             </li>
+             </div>
+           </ul>
+
+         </div>
+       </div
+     </nav>
+   </header>
+   <!-- END header -->
+
+   {% block content %}
+
+   <section class="site-section pt-5">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+
+           <div class="owl-carousel owl-theme home-slider">
+             <div>
+               <a  class="a-block d-flex align-items-center height-lg" style="background-image: url('/static/images/img1.png'); ">
+
+               </a>
+             </div>
+             <div>
+               <a  class="a-block d-flex align-items-center height-lg" style="background-image: url('/static/images/pag2.png'); background-size: auto;">
+
+               </a>
+             </div>
+             <div>
+               <a class="a-block d-flex align-items-center height-lg" style="background-image: url('/static/images/pag3.png'); background-size: auto;">
+
+               </a>
+             </div>
+           </div>
+
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-md-6 col-lg-4">
+           <a class="a-block d-flex align-items-center height-md" style="background-image: url('/static/images/back1.jpg'); ">
+             <div class="text">
+
+               <h3>INSTALACIONES:</h3>
+               <h6>Biblioteca<br> Comedor estudiatil<br> Gimnasio para actividades recreativas <br>Sala de Proyecciones<br>Servicio de Soda
+
+</h6>
+             </div>
+           </a>
+         </div>
+         <div class="col-md-6 col-lg-4">
+           <a  class="a-block d-flex align-items-center height-md" style="background-image: url('/static/images/back2.jpg'); ">
+             <div class="text">
+
+               <h3>NUESTROS RECURSOS:</h3>
+               <h6>Actividades deportivas y culturales  <br>Departamento de Música <br> Departamento de Orientación <br>Primaria y Secundaria </h6>
+             </div>
+           </a>
+         </div>
+         <div class="col-md-6 col-lg-4">
+           <a class="a-block d-flex align-items-center height-md" style="background-image: url('/static/images/back3.jpg'); ">
+             <div class="text">
+
+               <h3>CARRERAS TÉCNICAS:</h3> <h6>Contabilidad<br>Ejecutivo en Centros de Servicio <br>Informática en soporte<br>Mecánica Automotriz<br> Refrigeración y Aire Acondicionado
+</h6>
+             </div>
+           </a>
+         </div>
+       </div>
+     </div>
+
+
+   </section>
+   <!-- END section -->
+
+   <section class="site-section py-sm">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-6">
+         </div>
+       </div>
+       <div class="row blog-entries">
+         <div class="col-md-12 col-lg-8 main-content">
+           <div class="row">
+             <div class="col-md-6">
+               <a href="{% url 'acerca' %}" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                 <img src="{% static 'images/obj.jpeg'%}" alt="Image placeholder">
+                 <div class="blog-content-body">
+                   <h2>Nuestros objetivos</h2>
+                 </div>
+               </a>
+             </div>
+             <div class="col-md-6">
+               <a href="{% url 'valores' %}" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                 <img src="{% static 'images/value.png'%}" alt="Image placeholder">
+                 <div class="blog-content-body">
+                   <h2>Nuestros Valores</h2>
+                 </div>
+               </a>
+             </div>
+
+             <div class="col-md-6">
+               <a href="{% url 'hist' %}" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                 <img src="{% static 'images/hist.jpg'%}" alt="Image placeholder">
+                 <div class="blog-content-body">
+                   <h2>Nuestra Historia</h2>
+                 </div>
+               </a>
+             </div>
+             <div class="col-md-6">
+               <a href="{% url 'admision' %}" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                 <img src="{% static 'images/part.jpeg'%}" alt="Image placeholder">
+                 <div class="blog-content-body">
+                   <h2>¿Querés ser parte?</h2>
+                 </div>
+               </a>
+             </div>
+
+           </div>
+
+
+
+         </div>
+
+         <!-- END main-content -->
+
+         <div class="col-md-12 col-lg-4 sidebar">
+           <!-- END sidebar-box -->
+           <div class="sidebar-box">
+             <div class="bio text-center">
+               <img src="{% static 'images/Nelson.jpg'%}" alt="Image Placeholder" class="img-fluid">
+               <div class="bio-body">
+                 <h2>Nelson Mandela</h2>
+                 <p>“La educación es el arma más poderosa que puedes usar para cambiar el mundo.”</p>
+                 <p><a href="https://es.wikipedia.org/wiki/Nelson_Mandela" class="btn btn-primary btn-sm">¿Qui&eacuten fue Nelson Mandela?</a></p>
+               </div>
+             </div>
+           </div>
+           <!-- END sidebar-box -->
+
+           <!-- END sidebar-box -->
+
+           <div class="sidebar-box">
+             <h3 class="heading">Categorías</h3>
+             <ul class="categories">
+               <li><a href="{% url 'diurno' %}">Inicio </a></li>
+               <li><a href="{% url 'index' %}">Anuncios </a></li>
+               <li><a href="{% url 'calendario' %}">Calendario</a></li>
+             </ul>
+           </div>
+
+         </div>
+         <!-- END sidebar -->
+
+       </div>
+     </div>
+   </section>
+    {% endblock %}
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row mb-5">
+
+          <div class="col-md-7">
+            <h3>Visi&oacuten</h3>
+            <p> <i> "Formar profesionales con altos est&aacutendares de calidad que incursionen en el campo laboral colaborando en el desarrollo y progreso del pa&iacutes."</i></p>
+          </div>
+
+          <div class="col-md-4 ml-auto">
+            <div class="row">
+              <div class="col-md-7">
+
+                  <h3>Enlaces</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="{% url 'acerca' %}">Acerca de nosotros</a></li>
+                    <li><a href="{% url 'admision' %}">Admisi&oacuten</a></li>
+                    <li><a href="{% url 'contact' %}">Cont&aacutectenos</a></li>
+                    <li><a href="{% url 'TCU' %}">P&aacutegina Web</a></li>
+                  </ul>
+                </div>
+                </div>
+                </div>
+
+                <div class="col-md-7">
+                  <h3>Social</h3>
+                  <ul class="list-unstyled footer-social">
+                    <li><a href="https://www.facebook.com/pg/ColegioTecnicoParrita/"><span class="fa fa-facebook"></span> Facebook</a></li>
+                  </ul>
+                </div>
+                </div>
+
+      </div>
+        <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  © 2019 COLEGIO T&EacuteCNICO PROFESIONAL DE PARRITA, COSTA RICA.</a>
+ <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+        </div>
+      </div>
+    </footer>
+   <!-- END footer -->
+
+   <!-- loader -->
+   <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+   <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+   <script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+   <script src="{% static 'js/popper.min.js' %}"></script>
+   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+   <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+
+   <script src="{% static 'js/main.js' %}"></script>
+ </body>
+</html>

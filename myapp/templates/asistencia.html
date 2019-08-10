@@ -1,0 +1,156 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+    }
+
+
+div {
+padding-right: 70px;
+}
+
+
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+<script>function myfunction(){document.getElementById('unoo').disabled = true;}</script>
+<script>function myfunction1(){document.getElementById('doss').disabled = true;}</script>
+<script>function myfunction2(){document.getElementById('tress').disabled = true;}</script>
+<script>function myfunction3(){document.getElementById('cuatroo').disabled = true;}</script>
+<script>function myfunction4(){document.getElementById('cincoo').disabled = true;}</script>
+<script>function myfunction5(){document.getElementById('seiss').disabled = true;}</script>
+<script>function myfunction6(){document.getElementById('sietee').disabled = true;}</script>
+<script>function myfunction7(){document.getElementById('ochoo').disabled = true;}</script>
+<script>function myfunction8(){document.getElementById('nuevee').disabled = true;}</script>
+<script>function myfunction9(){document.getElementById('diezz').disabled = true;}</script>
+<script>function myfunction10(){document.getElementById('oncee').disabled = true;}</script>
+
+
+
+
+<h1>Asistencia</h1>
+
+<ul>
+{% for Estudiantes_septimo in object_list %}
+    <li>
+    <a href="{% url 'asistencia' %}">{{Estudiantes_septimo}}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<div>
+
+
+
+  <table style="width:100%" align="center">
+  <col width="200">
+  <col width="150">
+  <col width="100">
+  <col width="100">
+  <col width="100">
+  <col width="100">
+  <col width="100">
+  <col width="100">
+  <col width="130">
+  <col width="130">
+  <col width="140">
+  <col width="140">
+  <tr>
+    <th>Nombre del estudiante</th>
+    <th>Bajas calificaciones en las pruebas</th>
+    <th>Ausentismo</th>
+    <th>Falta de recursos econ&oacutemicos</th>
+    <th>Problemas familiares</th>
+    <th>Violencia</th>
+    <th>Adicciones</th>
+    <th>Falta de inter&eacutes</th>
+    <th>Gran cantidad de llegadas tard&iacutea</th>
+    <th>Mal comportamiento</th>
+    <th>Incuplimiento de trabajos extraclase</th>
+    <th>OTROS (ampliar en la parte inferior)</th>
+  </tr>
+    {% for Estudiantes_septimo in object_list %}
+
+        <tr ><td>{{Estudiantes_septimo}}</a></td>
+
+        <form id='{{ Estudiantes_septimo }}'  action="/asistencia/get_data" method="post">
+        {% csrf_token %}
+
+        <td>
+            <input id='uno' type="checkbox" name="calificaciones" value="Si" onclick="myfunction()">
+            <input id='unoo' type="hidden" name="calificaciones" value="No" ></td>
+
+        <td>
+            <input id='dos' type="checkbox" name="asusentismo" value="Si"  onclick="myfunction1()">
+            <input id='doss' type="hidden" name="asusentismo" value="No" ></td>
+
+
+        <td>
+            <input id='tres' type="checkbox" name="reursos"  value="Si"  onclick="myfunction2()" >
+            <input id='tress' type="hidden" name="reursos" value="No" ></td>
+
+        <td>
+            <input id='cuatro' type="checkbox" name="familiares "  value="Si"  onclick="myfunction3()">
+            <input id='cuatroo' type="hidden" name="familiares" value="No" ></td>
+
+        <td>
+            <input id='cinco' type="checkbox" name="Violencia" value="Si"  onclick="myfunction4()">
+            <input id='cincoo' type="hidden" name="Violencia" value="No" ></td>
+
+        <td>
+            <input id='seis' type="checkbox" name="Adicciones" value="Si"  onclick="myfunction5()">
+            <input id='seiss' type="hidden" name="Adicciones" value="No" ></td>
+
+        <td>
+            <input id='siete' type="checkbox" name="interes" value="Si"  onclick="myfunction6()">
+            <input id='sietee' type="hidden" name="interes" value="No" ></td>
+
+        <td>
+            <input id='ocho' type="checkbox" name="tardias" value="Si"  onclick="myfunction7()">
+            <input id='ochoo' type="hidden" name="tardias" value="No" ></td>
+
+        <td>
+            <input id='nueve' type="checkbox" name="comportamiento" value="Si"  onclick="myfunction8()">
+            <input id='nuevee' type="hidden" name="comportamiento" value="No" ></td>
+
+        <td>
+            <input id='diez' type="checkbox" name="trabajos" value="Si"  onclick="myfunction9()">
+            <input id='diezz' type="hidden" name="trabajos" value="No" ></td>
+
+        <td>
+            <input id='once' type="checkbox" name="otros" value="Si"  onclick="myfunction10()">
+            <input id='oncee' type="hidden" name="otros" value="No" ></td>
+
+        <td id='lolo'>
+        <input type="submit" value="Submit">
+        </td>
+
+        </form>
+        </tr>
+
+    {% endfor %}
+    <script>
+    console.log($('#{{ Estudiantes_septimo }}').val())
+    {% for Estudiantes_septimo in object_list %}
+    $("{{ Estudiantes_septimo }}").submit(function(e){
+    $.post('/asistencia/get_data', $(this).serialize());
+    e.preventDefault();
+    });
+    {% endfor %}
+
+    </script>
+  </table>
+</div>
+
+
+{% endblock %}

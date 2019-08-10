@@ -1,0 +1,42 @@
+
+{% extends "diurno.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section class="TCU">
+
+    <div class= "container">
+        <div class="row">
+            <div class="TCU">
+            <h1>La Página Web  </h1>
+                <p>La página web surgió como un proyecto del TCU (TC-716) de la Universidad de Costa Rica. El TCU busca contribuir
+                con el apoyo educativo y actividades lúdicas, deportivas y musicales con el estudiantado y talleres,
+                conversatorios y actividades de integración de la familia y la comunidad con los colegios.</p>
+
+                <p>La idea de la página web es centralizar y ser un espacio informativo con el que pueda contar el Colegio Técnico de Parrita. </p>
+            </div>
+            <div class="pregunt">
+                <h2> ¿Qué es el TCU?</h2>
+                <p>
+                    El Trabajo Comunal Universitario (TCU) busca contribuir dinámicamente en la sociedad potenciando oportunidades e incidiendo en la solución de problemas.
+                    El TCU es interdisciplinario en donde colaboran estudiantes y docentes para cumplir objetivos planificados en pro de la sociedad.
+                </p>
+            </div>
+            <div class="imagsTCU">
+                <div class="imgRR">
+                    <img src="{% static 'images/tcu1.jpeg'%}">
+                </div>
+                    <div class="imgL">
+                        <img src="{% static 'images/tcu3.jpeg'%}">
+                    </div>
+                <div class="imgU" >
+                    <img src="{% static 'images/tcu2.jpeg'%}"> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+<section>
+
+{% endblock %}

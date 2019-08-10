@@ -1,0 +1,22 @@
+{% extends "diurno.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <a href="{% url 'anuNoct' %}">
+    <div class="imgs">
+        <div class="imgluna">
+            <img src="{% static 'images/luna.png'%}"> <p class="imagedesc1"> Nocturno  </p>
+        </div>
+    </a>
+
+    <a href="{% url 'anuDi' %}">
+        <div class="imgsolll">
+            <img src="{% static 'images/sol5.jpg'%}"> <p class="imagedesc2"> Diurno  </p>
+        </div>
+    </div>
+</a>
+
+
+
+{% endblock %}

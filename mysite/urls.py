@@ -40,6 +40,7 @@ urlpatterns = [
     path('valores/',v.valores,  name='valores'),
     path('TCU/',v.TCU,  name='TCU'),
     path('hist/',v.hist,  name='hist'),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

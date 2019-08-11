@@ -302,6 +302,11 @@ header .navbar .dropdown-menu a {
   animation-duration: 9s;
 }
 
+.calendar {
+padding-top:50px;
+padding-bottom:50px;
+}
+
 .Contactos {
 padding: 50px ;
 }
@@ -2065,12 +2070,13 @@ blockquote p {
 }
 
 
-.imgsolll:hover .imagedesc2{
+.sise:hover .imagedesc2{
     visibility: visible;
     opacity: 1;
+
 }
 
-.imgluna:hover .imagedesc1{
+.yuyu:hover .imagedesc1{
     visibility: visible;
     opacity: 1;
 }
@@ -2083,6 +2089,7 @@ blockquote p {
     font-size: 50px;
     Text-align:center;
     padding-top: 50px;
+    padding-left: 70px;
 }
 
 .imagedesc2 {
@@ -2091,7 +2098,7 @@ blockquote p {
     color: #000;
     opacity: 0;
     font-size: 50px;
-    Text-align:center;
+    padding-right: 150px;
 }
 
 .line {
@@ -2283,4 +2290,24 @@ padding-top: 25px;
 width: 25%;
 height: 25%;
 
+}
+
+.yuyu img{
+padding-left: 75px;
+padding-top: 50px;
+}
+.sise {
+text-align: right;
+}
+
+
+.sise img{
+padding-right: 75px;
+padding-top: 25px;
+height: 300px;
+width: 400px;
+}
+
+.sito p {
+color: #FF0000;
 }

@@ -11,13 +11,11 @@ from django.dispatch import receiver
 class Subir_Diurno(models.Model):
     pdf = models.FileField(upload_to='download/')
 
+
 class Subir_Nocturno(models.Model):
     pdf = models.FileField(upload_to='downloaddos/')
 
 @receiver(post_delete, sender=Subir_Diurno)
-def submission_delete(sender, instance, **kwargs):
-    instance.pdf.delete(False)
-
 @receiver(post_delete, sender=Subir_Nocturno)
 def submission_delete(sender, instance, **kwargs):
     instance.pdf.delete(False)

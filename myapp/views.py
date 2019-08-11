@@ -72,7 +72,7 @@ def download(request):
                 pdf.closed
         else:
             break
-    return render_to_response('anuDi.html')
+    return render_to_response('nohay.html')
 
 def downloaddos(request):
     path = "downloaddos/*.pdf"
@@ -85,7 +85,7 @@ def downloaddos(request):
                 pdf.closed
         else:
             break
-    return render_to_response('anuNoct.html')
+    return render_to_response('nohay.html')
 
 
 """
